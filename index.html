@@ -1,60 +1,84 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Finder UI</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+    <div class="lang-switcher">
+        <button id="langTH" class="lang-btn active">TH</button>
+        <span>|</span>
+        <button id="langEN" class="lang-btn">EN</button>
+    </div>
+
 
     <div class="container">
         <header>
-            <h1>Find the Perfect Choice<br>for You</h1>
-            <p class="subtitle">
+            <h1 data-th="ค้นหาสิ่งที่ใช่สำหรับคุณ" data-en="Find the Perfect Choice for You">Find the Perfect
+                Choice<br>for You</h1>
+            <p class="subtitle" data-th="เราช่วยคุณเลือกสินค้าและบริการที่เหมาะสมกับงบประมาณและความต้องการ"
+                data-en="We help you choose the right products or services based on your needs, budget, and priorities.">
                 We help you choose the right products or services based on your needs, budget, and priorities.
             </p>
         </header>
 
+
         <div class="search-container">
-            <input type="text" placeholder="What are you looking for? e.g. Gaming phone, Camera...">
-            <button class="search-btn">Search</button>
+            <input type="text" data-th-placeholder="คุณกำลังมองหาอะไรอยู่? เช่น โทรศัพท์เกมมิ่ง กล้อง"
+                data-en-placeholder="What are you looking for? e.g. Gaming phone, Camera...">
+
+            <button class="search-btn" data-th="ค้นหา" data-en="Search">
+                Search
+            </button>
+
         </div>
 
         <section>
-            <h2>Quick Category Shortcuts</h2>
+            <h2 data-th="หมวดหมู่ยอดนิยม" data-en="Quick Category Shortcuts"></h2>
             <div class="category-grid">
-                <div class="cat-card">
+                <div class="cat-card" data-id="smartphones">
                     <div class="cat-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
-                    <div class="cat-title">Smartphones</div>
+                    <div class="cat-title" data-th="สมาร์ตโฟน" data-en="Smartphones"></div>
                 </div>
-                <div class="cat-card">
+
+                <div class="cat-card" data-id="gaming">
                     <div class="cat-icon"><i class="fa-solid fa-gamepad"></i></div>
-                    <div class="cat-title">Gaming Devices</div>
+                    <div class="cat-title" data-th="อุปกรณ์เกมมิ่ง" data-en="Gaming Devices"></div>
                 </div>
-                <div class="cat-card">
+
+                <div class="cat-card" data-id="laptops">
                     <div class="cat-icon"><i class="fa-solid fa-laptop"></i></div>
-                    <div class="cat-title">Laptops</div>
+                    <div class="cat-title" data-th="แล็ปท็อป" data-en="Laptops"></div>
                 </div>
-                <div class="cat-card">
+
+                <div class="cat-card" data-id="entertainment">
                     <div class="cat-icon"><i class="fa-solid fa-headphones"></i></div>
-                    <div class="cat-title">Entertainment</div>
+                    <div class="cat-title" data-th="เครื่องเสียง" data-en="Entertainment"></div>
                 </div>
-                <div class="cat-card">
+
+                <div class="cat-card" data-id="smarthome">
                     <div class="cat-icon"><i class="fa-solid fa-house-signal"></i></div>
-                    <div class="cat-title">Smart Home</div>
+                    <div class="cat-title" data-th="อุปกรณ์สมาร์ทโฮม" data-en="Smart Home"></div>
                 </div>
-                <div class="cat-card">
+
+                <div class="cat-card" data-id="others">
                     <div class="cat-icon"><i class="fa-solid fa-gift"></i></div>
-                    <div class="cat-title">Others</div>
+                    <div class="cat-title" data-th="อื่นๆ" data-en="Others"></div>
                 </div>
             </div>
         </section>
 
         <section>
-            <h2>How It Works</h2>
+            <h2 data-th="วิธีการทำงาน" data-en="How It Works"></h2>
             <div class="process-grid">
                 <div class="process-card">
                     <div class="process-icon"><i class="fa-solid fa-dollar-sign"></i></div>
@@ -75,7 +99,7 @@
         </section>
 
         <section>
-            <h2>Featured Recommendations</h2>
+            <h2 data-th="คำแนะนำที่เหมาะกับคุณ" data-en="Featured Recommendations"></h2>
             <div class="featured-grid">
                 <div class="feat-card">
                     <div class="feat-img-placeholder"><i class="fa-solid fa-mobile-screen"></i></div>
@@ -109,5 +133,8 @@
         </div>
 
     </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

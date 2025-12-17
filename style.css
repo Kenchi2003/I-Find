@@ -1,7 +1,6 @@
 /* --- ตั้งค่าพื้นฐาน (Global Styles) --- */
 :root {
     --primary-color: #A78BFA;
-    /* สีม่วงปุ่ม */
     --primary-hover: #8B5CF6;
     --bg-gradient-start: #F3E8FF;
     --bg-gradient-end: #FDF4FF;
@@ -35,9 +34,7 @@ body {
 }
 
 /* --- Header --- */
-header {
-    margin-bottom: 30px;
-}
+header { margin-bottom: 30px; }
 
 h1 {
     font-size: 2.5rem;
@@ -74,9 +71,7 @@ h1 {
     color: var(--text-dark);
 }
 
-.search-container input::placeholder {
-    color: #9CA3AF;
-}
+.search-container input::placeholder { color: #9CA3AF; }
 
 .search-btn {
     background-color: var(--primary-color);
@@ -89,9 +84,7 @@ h1 {
     transition: background 0.3s;
 }
 
-.search-btn:hover {
-    background-color: var(--primary-hover);
-}
+.search-btn:hover { background-color: var(--primary-hover); }
 
 /* --- Sections Common Title --- */
 h2 {
@@ -115,8 +108,8 @@ h2 {
     padding: 24px 10px;
     text-align: center;
     box-shadow: var(--shadow);
-    cursor: pointer;
-    transition: transform 0.2s;
+    cursor: pointer; /* เมาส์เป็นรูปมือ */
+    transition: transform 0.2s, background-color 0.2s;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -126,6 +119,7 @@ h2 {
 
 .cat-card:hover {
     transform: translateY(-5px);
+    background-color: #FAFAFA;
 }
 
 .cat-icon {
@@ -133,7 +127,6 @@ h2 {
     color: var(--primary-color);
     margin-bottom: 12px;
     background: #F3E8FF;
-    /* Light purple bg for icon if needed, or simple text */
     width: 50px;
     height: 50px;
     display: flex;
@@ -142,14 +135,9 @@ h2 {
     border-radius: 12px;
 }
 
-/* Specific Icon Colors from image style */
-.cat-card:nth-child(1) .cat-icon {
-    color: #8B5CF6;
-}
-
-.cat-card:nth-child(2) .cat-icon {
-    color: #8B5CF6;
-}
+/* Specific Icon Colors style */
+.cat-card:nth-child(1) .cat-icon, 
+.cat-card:nth-child(2) .cat-icon { color: #8B5CF6; }
 
 .cat-title {
     font-size: 0.9rem;
@@ -186,16 +174,8 @@ h2 {
     font-size: 1.2rem;
 }
 
-.process-card h3 {
-    font-size: 1rem;
-    margin-bottom: 10px;
-}
-
-.process-card p {
-    font-size: 0.85rem;
-    color: var(--text-grey);
-    line-height: 1.4;
-}
+.process-card h3 { font-size: 1rem; margin-bottom: 10px; }
+.process-card p { font-size: 0.85rem; color: var(--text-grey); line-height: 1.4; }
 
 /* --- Featured Recommendations --- */
 .featured-grid {
@@ -219,7 +199,6 @@ h2 {
     width: 50px;
     height: 60px;
     background-color: #E9D5FF;
-    /* Light purple placeholder */
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -228,32 +207,12 @@ h2 {
     font-size: 1.5rem;
 }
 
-.feat-info h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin: 0;
-}
-
-.feat-info span {
-    font-size: 0.8rem;
-    color: var(--text-grey);
-    display: block;
-}
-
-.feat-info .product-name {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--text-dark);
-    margin-top: 4px;
-}
+.feat-info h3 { font-size: 1.5rem; font-weight: 700; color: var(--text-dark); margin: 0; }
+.feat-info span { font-size: 0.8rem; color: var(--text-grey); display: block; }
+.feat-info .product-name { font-size: 1rem; font-weight: 500; color: var(--text-dark); margin-top: 4px; }
 
 /* --- CTA Button --- */
-.cta-container {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 50px;
-}
+.cta-container { text-align: center; margin-top: 20px; margin-bottom: 50px; }
 
 .cta-big-btn {
     background-color: var(--primary-color);
@@ -268,37 +227,33 @@ h2 {
     font-size: 1rem;
 }
 
-.cta-big-btn:hover {
-    background-color: var(--primary-hover);
+.cta-big-btn:hover { background-color: var(--primary-hover); }
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    .category-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-grid, .featured-grid { grid-template-columns: 1fr; }
+    .search-container { flex-direction: column; padding: 10px; }
+    .search-container input { width: 100%; margin-bottom: 10px; text-align: center; }
+    .search-btn { width: 100%; }
+}
+.lang-switcher {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 0.9rem;
 }
 
-/* --- Responsive Design (Mobile) --- */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
+.lang-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    color: #6B7280;
+}
 
-    .category-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .process-grid,
-    .featured-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .search-container {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .search-container input {
-        width: 100%;
-        margin-bottom: 10px;
-        text-align: center;
-    }
-
-    .search-btn {
-        width: 100%;
-    }
+.lang-btn.active {
+    color: #8B5CF6;
+    font-weight: 600;
 }
